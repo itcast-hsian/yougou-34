@@ -20,9 +20,29 @@
       </view>
     </view>
 
+    <!-- 品牌列表，点击时候切换数据 -->
     <view class="categorys">
-    
+      <view class="categorys-row">
+        <!-- 标题 -->
+        <view class="categorys-title">
+          <text>/</text>
+          电视
+          <text>/</text>
+        </view>
+
+        <!-- 品牌列表 -->
+        <view class="categorys-list">
+          <view class="categorys-item" wx:for="{{ [1,1,1,1,1,1] }}">
+            <image 
+            src="https://img.alicdn.com/i2/2/TB1ilbUHpXXXXb8XXXXSutbFXXX.jpg_90x90q90.jpg"
+            mode="aspectFill"
+            ></image>
+            <view>施耐德电器</view>
+          </view>
+        </view>
+      </view>
     </view>
+    
   </view>
 
 </view>

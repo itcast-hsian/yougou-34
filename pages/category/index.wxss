@@ -62,3 +62,36 @@
   top:20rpx;
   left: 0;
 }
+
+.categorys{
+  flex:1;
+  padding:20rpx;
+}
+
+.categorys-title{
+  text-align: center;
+  margin-bottom:20px;
+}
+
+.categorys-title text{
+  margin: 0 20rpx;
+  color:#666;
+}
+
+.categorys-list{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.categorys-item{
+  width:33.33%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.categorys-item image{
+  width: 90%;
+  height:100rpx;
+}
