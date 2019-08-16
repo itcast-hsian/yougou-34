@@ -1,4 +1,4 @@
-<view>
+<view class="container">
   
   <!-- 搜索 -->
   <view class="search">
@@ -60,6 +60,4 @@
     </view>
 
   </view>
-
-
 </view>

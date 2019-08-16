@@ -40,27 +40,32 @@ const request = function(config = {}){
 
   // 返回一个promise。resolve是成功的回调。reject是失败的回调
   return new Promise( (resolve, reject) => {
-    //发起小程序的请求
-    wx.request({
-      // 把传入的对象展开
-      ...config,
 
-      success(res){
-        // 成功之后触发then的回调函数
-        resolve(res);
-      },
+    if(wx){
+      //发起小程序的请求
+      wx.request({
+        // 把传入的对象展开
+        ...config,
 
-      fail(){},
+        success(res) {
+          // 成功之后触发then的回调函数
+          resolve(res);
+        },
 
-      // 后台接口可能会自定义错误，错误的处理函数放到complete来执行
-      complete(res){
+        fail() { },
 
-        // 循环调用错误的错误函数
-        request.errors.forEach(fn => {
-          fn(res);
-        })
-      }
-    })
+        // 后台接口可能会自定义错误，错误的处理函数放到complete来执行
+        complete(res) {
+
+          // 循环调用错误的错误函数
+          request.errors.forEach(fn => {
+            fn(res);
+          })
+        }
+      })
+    }else{
+      // $.ajax()
+    }
   })
 };
 
