@@ -1,3 +1,5 @@
+import request from "../../utils/request.js"
+
 // pages/category/index.js
 Page({
 
@@ -5,23 +7,9 @@ Page({
    * 页面的初始数据
    */
   data: {
-    navs: [
-      "电视",
-      "大电视",
-      "空调",
-      "电视",
-      "大电视",
-      "空调",
-      "电视",
-      "大电视",
-      "空调",
-      "电视",
-      "大电视",
-      "空调",
-      "电视",
-      "大电视",
-      "空调",
-    ],
+
+    // 总的数据
+    navs: [],
 
     // 索引
     current: 0
@@ -32,6 +20,15 @@ Page({
    */
   onLoad: function () {
 
+    request({
+      url: "/categories"
+    }).then(res => {
+      const {message} = res.data;
+
+      this.setData({
+        navs: message
+      })
+    })
   },  
 
   //  菜单栏点击时候触发

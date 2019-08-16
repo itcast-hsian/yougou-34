@@ -75,7 +75,7 @@
 
 .categorys-title text{
   margin: 0 20rpx;
-  color:#666;
+  color:#eee;
 }
 
 .categorys-list{
@@ -89,9 +89,12 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  font-size:14px;
+  color:#666;
+  margin-bottom: 10rpx;
 }
 
 .categorys-item image{
-  width: 90%;
-  height:100rpx;
+  width: 120rpx;
+  height:120rpx;
 }
