@@ -21,4 +21,45 @@
     </block>
   </swiper>
 
+  <!-- 分类菜单 -->
+  <view class="menus">
+    <image 
+    src="{{ item.image_src }}" 
+    mode="aspectFill"
+    wx:for="{{ menus }}"
+    wx:key="{{ index }}"
+    >
+    </image>
+  </view>
+
+  <!-- 楼层 -->
+  <view class="floor"
+  wx:for="{{ floors }}"
+  wx:key="{{ index }}">
+    <!-- 楼层标题 -->
+    <view class="floor-title">
+      <image src="{{item.floor_title.image_src}}" mode="aspectFill"></image>
+    </view>
+
+    <!-- 楼层内容 -->
+    <view class="floor-content">
+      <!-- 左侧的大图 -->
+      <view class="floor-content-left">
+        <image src="{{ item.product_list[0].image_src }}" mode="aspectFill"></image>
+      </view>
+      <!-- 右侧四张小图 -->
+      <view class="floor-content-right">
+        <image 
+        wx:for="{{ item.product_list }}"
+        wx:key="{{ index }}"
+        wx:if="{{index > 0}}"
+        src="{{ item.image_src }}" 
+        mode="aspectFill"
+        ></image>
+      </view>
+    </view>
+
+  </view>
+
+
 </view>
