@@ -1,6 +1,11 @@
+/* 1.固定了container的高度为100% */
 .container{
-  padding-top: 100rpx;
+  position: absolute;
+  width:100%;
+  top:100rpx;
+  bottom:0;
 }
+
 
 .search{
   padding:20rpx;
@@ -28,13 +33,21 @@
   margin-right:10px;
 }
 
+/* 2.继承了contaienr的高度，设置定位为相对定位 */
 .main{
   display: flex;
-  justify-content: sapce-between;
+  justify-content: space-between;
+  height: 100%;
+  position: relative;
 }
 
+/* 3.菜单栏的布局，高度继承main的高度100%，为了出现滚动体需要脱离文档流 */
 .navs{
+  position: absolute;
+  left:0; top:0;
   width:200rpx;
+  height:100%;
+  overflow: scroll;
   background: #f6f6f6;
 }
 
@@ -63,14 +76,21 @@
   left: 0;
 }
 
+/* 4.品牌栏的布局，高度继承main的高度100%，为了出现滚动体需要脱离文档流 */
 .categorys{
+  position: absolute;
+  left: 200rpx;
+  right:0; 
+  height:100%;
+  overflow: scroll;
   flex:1;
   padding:20rpx;
+  box-sizing: border-box;
 }
 
 .categorys-title{
   text-align: center;
-  margin-bottom:20px;
+  margin:20px 0;
 }
 
 .categorys-title text{
@@ -98,3 +118,12 @@
   width: 120rpx;
   height:120rpx;
 }
+
+.categorys-item > view{
+  width:100%;
+  text-align: center;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+}
+

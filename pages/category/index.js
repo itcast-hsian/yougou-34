@@ -7,10 +7,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-
     // 总的数据
     navs: [],
-
     // 索引
     current: 0
   },
@@ -19,7 +17,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function () {
-
+    // 请求菜单栏数据
     request({
       url: "/categories"
     }).then(res => {
