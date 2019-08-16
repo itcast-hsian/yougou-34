@@ -1,2 +1,28 @@
-<!--pages/category/index.wxml-->
-<text>pages/category/index.wxml</text>
+<view class="container">
+  <!-- 搜索 -->
+  <view class="search">
+    <view class="search-input">
+      <icon type="search" size="16"/>搜索
+    </view>
+  </view>
+
+  <!-- 分类页的内容 -->
+  <view class="main">
+    <!-- 左侧菜单栏 -->
+    <view class="navs">
+      <view 
+      class="navs-item {{ index === current ? 'active': '' }}" 
+      wx:for="{{ navs }}" 
+      wx:key="{{index}}"
+      bindtap="handleChange"
+      data-index="{{index}}">
+        {{item}}
+      </view>
+    </view>
+
+    <view class="categorys">
+    
+    </view>
+  </view>
+
+</view>

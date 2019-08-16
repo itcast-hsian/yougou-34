@@ -1,1 +1,64 @@
-/* pages/category/index.wxss */
+.container{
+  padding-top: 100rpx;
+}
+
+.search{
+  padding:20rpx;
+  background:#ff2d4a;
+  position: fixed;
+  top:0;
+  left:0;
+  width: 100%;
+  box-sizing: border-box;
+  z-index: 99;
+}
+
+.search-input{
+  height:60rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #fff;
+  border-radius: 4px;
+  font-size:14px;
+  color: #666;
+}
+
+.search-input icon{
+  margin-right:10px;
+}
+
+.main{
+  display: flex;
+  justify-content: sapce-between;
+}
+
+.navs{
+  width:200rpx;
+  background: #f6f6f6;
+}
+
+.navs-item{
+  height:100rpx;
+  line-height: 100rpx;
+  text-align: center;
+  box-sizing: border-box;
+  border-bottom:1px #eee solid;
+}
+
+.navs .active{
+  color:red;
+  background:#fff;
+  position: relative;
+}
+
+.navs .active::before{
+  display: block;
+  content: "";
+  width:4px;
+  height: 60rpx;
+  background: red;
+  position: absolute;
+  top:20rpx;
+  left: 0;
+}
