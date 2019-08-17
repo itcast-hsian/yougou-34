@@ -1,0 +1,43 @@
+.swiper{
+  height:750rpx;
+}
+
+.slide-image{
+  width:750rpx;
+  height:750rpx;
+}
+
+.goods-price{
+  padding:20rpx;
+  font-size: 18px;
+  color:red;
+}
+
+.goods-info{
+  display: flex;
+  justify-content: space-between;
+  padding:0 20rpx;
+}
+
+.goods-title{
+  flex:1;
+  overflow: hidden;
+  text-overflow: ellipsis; 
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.goods-star{
+  width:150rpx;
+  text-align: center;
+  line-height: 1.2;
+  border-left:1px #ddd solid;
+  margin-left: 20rpx;
+  color:#999;
+  padding-top: 5rpx;
+}
+
+.star-text{
+  font-size:12px;
+}

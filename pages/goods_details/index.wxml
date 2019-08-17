@@ -1,0 +1,26 @@
+<!-- 轮播图 -->
+<swiper 
+class="swiper"
+indicator-dots>
+  <block wx:for="{{imgUrls}}">
+    <swiper-item>
+      <image src="{{item}}" class="slide-image"/>
+    </swiper-item>
+  </block>
+</swiper>
+
+<!-- 商品信息 -->
+<view class="goods-price"> ￥ 256 </view>
+
+<view class="goods-info">
+  <view class="goods-title">
+    spike 经典武士大马士革直刀(微型) 户外野营直刀 收藏礼品刀 饰品刀具
+  </view>
+
+  <view class="goods-star">
+    <view class="iconfont icon-shoucang"></view>
+    <view class="star-text">收藏</view>
+  </view>
+</view>
+
+
