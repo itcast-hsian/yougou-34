@@ -29,7 +29,7 @@ indicator-dots>
 <!-- 底部栏 -->
 <view class="footer-bar">
   <!-- 打开客服会话的按钮 -->
-  <button class="contact" open-type="contact" bindcontact="handleContact">
+  <button class="contact" open-type="contact">
     联系客服
   </button>
 
@@ -39,10 +39,11 @@ indicator-dots>
     <text>联系客服</text>
   </view>
   
-  <view class="footer-bar-left">
+  <!-- tabbar的页面需要加上open-type="switchTab" -->
+  <navigator url="/pages/cart/index" open-type="switchTab" class="footer-bar-left">
     <view class="iconfont icon-gouwuche"></view>
     <text>购物车</text>
-  </view>
+  </navigator>
 
   <!-- 右侧的按钮 -->
   <view class="footer-button">加入购物车</view>
