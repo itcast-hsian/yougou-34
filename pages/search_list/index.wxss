@@ -27,3 +27,40 @@
 .tab .active{
   color:red;
 }
+
+.goods-item{
+  display: flex;
+  justify-content: space-between;
+  padding:20rpx;
+  border-bottom:1px #ddd solid;
+}
+
+.goods-item image{
+  width:200rpx;
+  height:200rpx;
+  flex-shrink:0;
+}
+
+.goods-right{
+  margin-left:20rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.goods-title{
+  overflow: hidden;
+  text-overflow: ellipsis; 
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.goods-price{
+  color: red;
+  font-size:14px;
+}
+
+.goods-price text{
+  font-size:20px;
+}

@@ -17,3 +17,23 @@
     {{item}}
   </view>
 </view>
+
+<!-- 商品列表 -->
+<view class="goods-list">
+
+  <!-- 单个商品 -->
+  <view>
+    <navigator url=""  class="goods-item">
+      <image src="https://img13.360buyimg.com/mobilecms/s300x300_jfs/t1906/352/1985692780/230570/23fc27eb/56e63810N3e743b29.jpg!cc_150x150.webp"></image>
+
+      <view class="goods-right">
+        <view class="goods-title">
+          小米（MI）雨伞 全自动折叠太阳防晒遮阳伞米家男女通用商务家庭用创意超轻大号双人晴雨伞
+        </view>
+        <view class="goods-price">
+          ￥<text>69.00</text>
+        </view>
+      </view>
+    </navigator>
+  </view>
+</view>
