@@ -5,7 +5,7 @@
     "pages/cart/index",
     "pages/personal/index",
     "pages/search_list/index",
-    "pages/goods_details/index"
+    "pages/goods_detail/index"
   ],
   "window": {
     "backgroundTextStyle": "dark",

@@ -26,7 +26,7 @@
     <navigator 
     wx:for="{{ goods }}"
     wx:key="{{index}}"
-    url="" 
+    url="/pages/goods_detail/index?id={{item.goods_id}}" 
     class="goods-item">
       <image src="{{ item.goods_small_logo }}"></image>
 
