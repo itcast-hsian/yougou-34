@@ -16,7 +16,10 @@ Page({
     // 当前页数
     pagenum: 1,
     // 每页条数
-    pagesize: 10
+    pagesize: 10,
+
+    // 是否有更多
+    hasMore: true
   },
 
   handleChange(event){
@@ -60,6 +63,13 @@ Page({
     }).then(res => {
       const { goods } = res.data.message;
 
+      // 是否满足pagesize条数。不满足说明是最后一页
+      if(goods.length < this.data.pagesize){
+        this.setData({
+          hasMore: false
+        })
+      }
+
       // 循环给每个商品修改价格，保留两位小数点
       const newGoods = goods.map(v => {
         v.goods_price = Number(v.goods_price).toFixed(2);
@@ -75,6 +85,10 @@ Page({
 
   // 加载下一页的数据
   onReachBottom(){
+    // 没有更多，直接返回
+    if(!this.data.hasMore){
+      return;
+    }
     
     // 页数加1
     this.setData({
