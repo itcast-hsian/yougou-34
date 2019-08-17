@@ -1,0 +1,29 @@
+.search{
+  padding:20rpx;
+  background: #eee;
+}
+
+.search-input{
+  background:#fff;
+  height:60rpx;
+  display: flex;
+  align-items: center;
+  font-size:14px;
+  color:#666;
+  padding: 0 20rpx;
+}
+
+.search-input icon{
+  margin-right:10rpx;
+}
+
+.tab{
+  padding: 20rpx 0;
+  display: flex;
+  justify-content: space-around;
+  border-bottom:1px #ddd solid;
+}
+
+.tab .active{
+  color:red;
+}

@@ -1,0 +1,19 @@
+<!-- 搜索栏 -->
+<view class="search">
+  <view class="search-input">
+    <icon type="search" size="16"></icon>
+    小米
+  </view>
+</view>
+
+<!-- tab栏 -->
+<view class="tab">
+  <view 
+  class="tab-item {{current == index ? 'active': ''}}"
+  wx:for="{{ ['综合','销量', '价格'] }}"
+  wx:key="{{index}}"
+  bindtap="handleChange"
+  data-index="{{index}}">
+    {{item}}
+  </view>
+</view>
