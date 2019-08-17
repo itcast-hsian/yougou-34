@@ -26,3 +26,19 @@ indicator-dots>
 <!-- 商品详情，文档地址：https://developers.weixin.qq.com/miniprogram/dev/component/rich-text.html -->
 <rich-text nodes="{{ detail.goods_introduce }}"></rich-text>
 
+<!-- 底部栏 -->
+<view class="footer-bar">
+  <!-- 左侧的图标 -->
+  <view class="footer-bar-left">
+    <view class="iconfont icon-kefu"></view>
+    <text>联系客服</text>
+  </view>
+  <view class="footer-bar-left">
+    <view class="iconfont icon-gouwuche"></view>
+    <text>购物车</text>
+  </view>
+
+  <!-- 右侧的按钮 -->
+  <view class="footer-button">加入购物车</view>
+  <view class="footer-button">立即购买</view>
+</view>
