@@ -1,11 +1,7 @@
 <view class="container">
   
   <!-- 搜索 -->
-  <view class="search">
-    <view class="search-input">
-      <icon type="search" size="16"/>搜索
-    </view>
-  </view>
+  <search/>
 
   <!-- 轮播图 -->
   <swiper 

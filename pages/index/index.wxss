@@ -2,32 +2,6 @@
   padding-top: 100rpx;
 }
 
-.search{
-  padding:20rpx;
-  background:#ff2d4a;
-  position: fixed;
-  top:0;
-  left:0;
-  width: 100%;
-  box-sizing: border-box;
-  z-index: 99;
-}
-
-.search-input{
-  height:60rpx;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: #fff;
-  border-radius: 4px;
-  font-size:14px;
-  color: #666;
-}
-
-.search-input icon{
-  margin-right:10px;
-}
-
 .slide-image{
   width:750rpx;
   height:340rpx;
