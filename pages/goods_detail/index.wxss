@@ -81,3 +81,12 @@
 .footer-button:last-child{
   background: red;
 }
+
+.contact{
+  position:absolute;
+  left:0; top:0;
+  width:20%;
+  height:100rpx;
+  overflow: hidden;
+  opacity: 0;
+}
