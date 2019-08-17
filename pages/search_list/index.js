@@ -13,6 +13,10 @@ Page({
 
     // 商品列表
     goods: [],
+    // 当前页数
+    pagenum: 1,
+    // 每页条数
+    pagesize: 10
   },
 
   handleChange(event){
@@ -37,8 +41,22 @@ Page({
       keyword: options.keyword
     })
 
+    // 请求列表数据
+    this.getData();
+  },
+
+  // 请求列表数据
+  getData(){
+
+    const {keyword, pagenum, pagesize} = this.data;
+
     request({
-      url: "/goods/search?query=" + options.keyword,
+      url: "/goods/search",
+      data: {
+        query: keyword,
+        pagenum,
+        pagesize
+      }
     }).then(res => {
       const { goods } = res.data.message;
 
@@ -49,8 +67,21 @@ Page({
       })
 
       this.setData({
-        goods: newGoods
+        // 合并新旧的数据
+        goods: [...this.data.goods, ...newGoods]
       })
     })
   },
+
+  // 加载下一页的数据
+  onReachBottom(){
+    
+    // 页数加1
+    this.setData({
+      pagenum: this.data.pagenum + 1
+    });
+
+    // 请求列表数据
+    this.getData();
+  }
 })

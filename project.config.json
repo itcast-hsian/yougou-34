@@ -44,9 +44,9 @@
 			"list": [
 				{
 					"id": 0,
-					"name": "pages/category/index",
-					"pathName": "pages/category/index",
-					"query": "",
+					"name": "pages/search_list/index",
+					"pathName": "pages/search_list/index",
+					"query": "keyword=电视",
 					"scene": null
 				}
 			]

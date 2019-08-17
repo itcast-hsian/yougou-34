@@ -65,3 +65,10 @@
 .goods-price text{
   font-size:20px;
 }
+
+.load-more{
+  padding:20px;
+  text-align: center;
+  font-size:12px;
+  color:#999;
+}

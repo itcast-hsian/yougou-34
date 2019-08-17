@@ -41,3 +41,6 @@
     </navigator>
   </view>
 </view>
+
+<!-- 加载更多的提示 -->
+<view class="load-more">加载更多</view>
