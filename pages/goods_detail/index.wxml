@@ -2,19 +2,19 @@
 <swiper 
 class="swiper"
 indicator-dots>
-  <block wx:for="{{imgUrls}}" wx:key="{{index}}">
+  <block wx:for="{{ detail.pics }}" wx:key="{{index}}">
     <swiper-item>
-      <image src="{{item}}" class="slide-image"/>
+      <image src="{{item.pics_big}}" class="slide-image"/>
     </swiper-item>
   </block>
 </swiper>
 
 <!-- 商品信息 -->
-<view class="goods-price"> ￥ 256 </view>
+<view class="goods-price"> ￥ {{ detail.goods_price }} </view>
 
 <view class="goods-info">
   <view class="goods-title">
-    spike 经典武士大马士革直刀(微型) 户外野营直刀 收藏礼品刀 饰品刀具
+    {{ detail.goods_name }}
   </view>
 
   <view class="goods-star">
@@ -23,4 +23,6 @@ indicator-dots>
   </view>
 </view>
 
+<!-- 商品详情，文档地址：https://developers.weixin.qq.com/miniprogram/dev/component/rich-text.html -->
+<rich-text nodes="{{ detail.goods_introduce }}"></rich-text>
 
