@@ -35,6 +35,7 @@
   border-bottom:1px #ddd solid;
 }
 
+/*flex-shrink:0;声明flex内部元素宽度不会被挤压*/
 .goods-item image{
   width:200rpx;
   height:200rpx;

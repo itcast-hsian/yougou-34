@@ -34,13 +34,17 @@
 
         <!-- 品牌列表 -->
         <view class="categorys-list">
-          <view class="categorys-item" wx:for="{{ item.children }}" wx:key="{{index}}">
+          <navigator 
+          url="/pages/search_list/index?keyword={{item.cat_name}}"
+          class="categorys-item" 
+          wx:for="{{ item.children }}" 
+          wx:key="{{index}}">
             <image 
             src="{{ item.cat_icon }}"
             mode="aspectFill"
             ></image>
             <view>{{ item.cat_name }}</view>
-          </view>
+          </navigator>
         </view>
       </view>
     </view>
