@@ -3,7 +3,6 @@
   <view class="address-info">
     <text>收货人：苏老师</text>
     <text>13800138000</text>
-    
   </view>
 
   <view class="address-text">
@@ -11,4 +10,10 @@
   </view>
 
   <image class="border" src="../../images/cart_border@2x.png"></image>
+</view>
+
+<!-- 购物车列表的头部 -->
+<view class="cart-title">
+  <view class="iconfont icon-dianpu"></view>
+  <text>购物车列表</text>
 </view>

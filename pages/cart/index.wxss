@@ -25,6 +25,22 @@
 }
 
 .border{
+  display: block;
   width:100%;
   height:15rpx;
+}
+
+.cart-title{
+  display: flex;
+  padding:0 20rpx;
+  height:100rpx;
+  line-height: 100rpx;
+  align-items: center;
+  border-top:20rpx #eee solid;
+  border-bottom:1px #ddd solid;
+}
+
+.cart-title .iconfont{
+  color:#999;
+  margin-right:10rpx;
 }
