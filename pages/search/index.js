@@ -51,6 +51,10 @@ Page({
     // 文档地址：https://developers.weixin.qq.com/miniprogram/dev/api/route/wx.navigateTo.html
     wx.navigateTo({
       url: "/pages/search_list/index?keyword=" + this.data.inputValue
-    })
+    });
+
+    // 把搜索关键字保存到本地
+    // 文档地址：https://developers.weixin.qq.com/miniprogram/dev/api/storage/wx.setStorageSync.html
+    wx.setStorageSync("history", [this.data.inputValue])
   }
 })
