@@ -33,12 +33,10 @@
 
   <!-- 历史记录的列表 -->
   <view class="history-list">
-    <navigator url="">小米</navigator> 
-    <navigator url="">小米小米</navigator> 
-    <navigator url="">小小米</navigator> 
-    <navigator url="">小米</navigator> 
-    <navigator url="">小米小米</navigator> 
-    <navigator url="">小米</navigator> 
+    <navigator 
+    url="/pages/search_list/index?keyword={{item}}" 
+    wx:for="{{history}}"
+    wx:key="{{index}}">{{item}}</navigator> 
   </view>
 </view>
 

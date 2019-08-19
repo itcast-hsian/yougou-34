@@ -8,13 +8,20 @@ Page({
    */
   data: {
     inputValue: "", // 输入框的值
+    history: [] // 本地的历史记录
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    // 获取本地历史记录
+    // 文档地址：https://developers.weixin.qq.com/miniprogram/dev/api/storage/wx.getStorageSync.html
+    const history = wx.getStorageSync('history') || [];
 
+    this.setData({
+      history
+    })
   },
 
   // 没次输入搜索关键字时候都会触发
