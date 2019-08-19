@@ -26,6 +26,7 @@ Page({
 
   // 没次输入搜索关键字时候都会触发
   handleInput(event){
+     // value是输入框的值
     const {value} = event.detail;
 
     // 把输入框的值保存到data
@@ -34,14 +35,14 @@ Page({
     });
 
     // 查询搜索建议
-    request({
-      url:"/goods/qsearch",
-      data: {
-        query: value
-      }
-    }).then(res => {
-      console.log(res)
-    })
+    // request({
+    //   url:"/goods/qsearch",
+    //   data: {
+    //     query: value
+    //   }
+    // }).then(res => {
+    //   console.log(res)
+    // })
   },
 
   // 清空输入框的值
@@ -66,7 +67,6 @@ Page({
     this.setData({
       history: [...new Set(arr)]
     })
-    
 
     // 把搜索关键字保存到本地
     // 文档地址：https://developers.weixin.qq.com/miniprogram/dev/api/storage/wx.setStorageSync.html

@@ -1,2 +1,14 @@
-<!--pages/cart/index.wxml-->
-<text>pages/cart/index.wxml</text>
+<!-- 收货地址 -->
+<view class="address">
+  <view class="address-info">
+    <text>收货人：苏老师</text>
+    <text>13800138000</text>
+    
+  </view>
+
+  <view class="address-text">
+    收货地址：广东广州吉山幼儿园
+  </view>
+
+  <image class="border" src="../../images/cart_border@2x.png"></image>
+</view>

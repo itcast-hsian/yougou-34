@@ -1,1 +1,30 @@
-/* pages/cart/index.wxss */
+.address-info{
+  padding:20rpx;
+  display: flex;
+  justify-content: space-between;
+  padding-right:100rpx;
+  position: relative;
+}
+
+.address-info::after{
+  display: block;
+  content: "";
+  position: absolute;
+  right:25rpx;
+  top:35rpx;
+  width:16rpx;
+  height: 16rpx;
+  border-top:1px #666 solid;
+  border-right:1px #666 solid;
+  transform: rotate(45deg)
+}
+
+.address-text{
+  padding:20rpx;
+  padding-top:0;
+}
+
+.border{
+  width:100%;
+  height:15rpx;
+}
