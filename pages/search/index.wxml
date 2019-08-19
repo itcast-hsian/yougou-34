@@ -3,10 +3,12 @@
   <!-- 输入框 -->
   <view class="search-input">
     <icon type="search" size="16"></icon>
-    <input placeholder="请输入你想要的商品"></input>
+
+    <!-- bindinput相当于web里的oninput，每次输入文字时候都会触发 -->
+    <input placeholder="请输入你想要的商品" value="{{ inputValue }}" bindinput="handleInput"></input>
   </view>
   <!-- 取消按钮 -->
-  <view class="cancel">取消</view>
+  <view class="cancel" wx:if="{{ inputValue }}" bindtap="handleCancel">取消</view>
 </view>
 
 <!-- 搜索建议的列表 -->
