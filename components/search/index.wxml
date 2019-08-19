@@ -1,5 +1,5 @@
 <view class="search">
-  <view class="search-input">
+  <navigator url="/pages/search/index" class="search-input">
     <icon type="search" size="16"/>搜索
-  </view>
+  </navigator> 
 </view>
