@@ -28,7 +28,8 @@
 <view class="search-content">
   <view class="search-title">
     <text>历史搜索</text>
-    <icon type="clear" size="16"></icon>
+    <!-- 清除全部的搜索记录 -->
+    <icon type="clear" size="16" bindtap="handleClearAll"></icon>
   </view>
 
   <!-- 历史记录的列表 -->

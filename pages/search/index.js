@@ -60,8 +60,25 @@ Page({
       url: "/pages/search_list/index?keyword=" + this.data.inputValue
     });
 
+    // 保存新的搜索关键字前，要把关键字添加已有的列表
+    const arr = [this.data.inputValue, ...this.data.history];
+
+    this.setData({
+      history: [...new Set(arr)]
+    })
+    
+
     // 把搜索关键字保存到本地
     // 文档地址：https://developers.weixin.qq.com/miniprogram/dev/api/storage/wx.setStorageSync.html
-    wx.setStorageSync("history", [this.data.inputValue])
+    wx.setStorageSync("history", this.data.history)
+  },
+
+  // 清除所有的记录
+  handleClearAll(){
+    // 文档地址：https://developers.weixin.qq.com/miniprogram/dev/api/storage/wx.removeStorage.html
+    wx.removeStorageSync('history');
+    this.setData({ 
+      history: [] 
+    })
   }
 })
