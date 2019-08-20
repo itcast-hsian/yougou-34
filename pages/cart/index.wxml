@@ -1,14 +1,21 @@
 <view class="container">
   <!-- 收货地址 -->
   <view class="address">
-    <view class="address-info">
-      <text>收货人：苏老师</text>
-      <text>13800138000</text>
+
+    <!-- 如果有收货地址才显示 -->
+    <view wx:if="{{ address.userName }}"  bindtap="handleGetAddress">
+      <view class="address-info">
+        <text>收货人：{{ address.userName }}</text>
+        <text>{{ address.telNumber }}</text>
+      </view>
+
+      <view class="address-text">
+        收货地址：{{ address.detailInfo }}
+      </view>
     </view>
 
-    <view class="address-text">
-      收货地址：广东广州吉山幼儿园
-    </view>
+    <!-- 获取收货地址的按钮 -->
+    <view wx:else class="address-info" bindtap="handleGetAddress">添加收货地址</view>
 
     <image class="border" src="../../images/cart_border@2x.png"></image>
   </view>

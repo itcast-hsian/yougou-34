@@ -5,7 +5,12 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    // 收货人的信息
+    address: {
+      userName: "", // 收货人
+      telNumber: "", // 手机号码
+      detailInfo: "", // 详细的收货地址，在返回的数据中拼接省份，城市..
+    }
   },
 
   /**
@@ -15,52 +20,21 @@ Page({
 
   },
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
+  // 获取收货地址
+  handleGetAddress(){
+    // 文档地址：https://developers.weixin.qq.com/miniprogram/dev/api/open-api/address/wx.chooseAddress.html
+    wx.chooseAddress({
+      success: res => {
+        // 获取收货地址信息信息
+        this.setData({
+          address: {
+            userName: res.userName,
+            telNumber: res.telNumber,
+            detailInfo: res.provinceName + res.cityName + res.countyName + res.detailInfo
+          }
+        })
+      }
+    })
 
   }
 })
