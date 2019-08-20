@@ -53,6 +53,11 @@ Page({
 
     // 把商品添加到本地的goods对象中
     const {detail} = this.data;
+
+    //添加默认的选中状态和默认的数量
+    detail.selected = true;
+    detail.number = 1;
+
     goods[detail.goods_id] = detail;
 
     // 保存到本地

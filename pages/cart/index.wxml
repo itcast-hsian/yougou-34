@@ -30,7 +30,7 @@
   <view style="padding-bottom:100rpx">
     <view class="goods-item" wx:for="{{ goods }}">
       <!-- 选中的按钮, color颜色是动态的 -->
-      <icon class="selected" type="success" size="16" color="red"/>
+      <icon class="selected" type="success" size="16" color="{{ item.selected ? 'red' : 'gray' }}"/>
 
       <view class="goods-info">
         <image 
@@ -50,7 +50,7 @@
             <!-- 计算数量 -->
             <view class="goods-numbers">
               <view class="goods-number-btn">-</view>
-              <text>3</text>
+              <text>{{ item.number }}</text>
               <view class="goods-number-btn">+</view>
             </view>
           </view>
