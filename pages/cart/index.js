@@ -60,11 +60,35 @@ Page({
     let price = 0;
 
     Object.keys(this.data.goods).forEach(v => {
-      price += this.data.goods[v].goods_price;
+      // item是当前的商品
+      const item = this.data.goods[v];
+
+      //满足选中状态时true的时候才添加价格
+      if (item.selected){
+        price += item.goods_price;
+      }
     });
 
     this.setData({
       allPrice: price
     })
+  },
+
+  // 选中状态
+  handleSelected(event){
+    // 获取参数
+    const {id} = event.currentTarget.dataset;
+
+    const {goods} = this.data;
+
+    // 把选中状态取反
+    goods[id].selected = !goods[id].selected;
+
+    this.setData({
+      goods
+    })
+
+    // 计算总价格
+    this.getAllPrice();
   }
 })
