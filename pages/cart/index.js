@@ -116,7 +116,7 @@ Page({
     const { id } = event.currentTarget.dataset;
     const { goods } = this.data;
 
-
+    // 数量等于1时候
     if (goods[id].number === 1) {
 
       // 带有确定和取消的弹窗
@@ -132,14 +132,17 @@ Page({
             // delete是js原生的属性，用来删除对象的属性
             delete goods[id];
 
+            // 重新赋值
             this.setData({
               goods
             });
 
+            // 修改总价格和本地的数据
             this.getAllPrice();
           } 
         }
       })
+    // 正常情况下
     }else{
       // 给商品的数量加1
       goods[id].number -= 1;
