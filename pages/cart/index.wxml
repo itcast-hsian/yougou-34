@@ -55,11 +55,17 @@
             <view class="goods-price">￥{{ item.goods_price }}</view>
             <!-- 计算数量 -->
             <view class="goods-numbers">
-              <view class="goods-number-btn">-</view>
+              <!-- 数量减一 -->
+              <view 
+              class="goods-number-btn"
+              bindtap="handleReduceNumber"
+               data-id="{{item.goods_id}}">-</view>
+               
               <text>{{ item.number }}</text>
+              <!-- 数量加一 -->
               <view 
               class="goods-number-btn" 
-              bindtap="handleAddNunber"
+              bindtap="handleAddNumber"
               data-id="{{item.goods_id}}">+</view>
             </view>
           </view>

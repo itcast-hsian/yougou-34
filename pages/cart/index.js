@@ -96,7 +96,7 @@ Page({
   },
 
   // 增加数量
-  handleAddNunber(event){
+  handleAddNumber(event){
     const {id} = event.currentTarget.dataset;
     const { goods } = this.data;
 
@@ -109,5 +109,47 @@ Page({
 
     // 计算总价格
     this.getAllPrice();
+  },
+
+  // 减少数量
+  handleReduceNumber(event) {
+    const { id } = event.currentTarget.dataset;
+    const { goods } = this.data;
+
+
+    if (goods[id].number === 1) {
+
+      // 带有确定和取消的弹窗
+      // 文档地址：https://developers.weixin.qq.com/miniprogram/dev/api/ui/interaction/wx.showModal.html
+      wx.showModal({
+        title: '提示',
+        content: '确定要删除商品吗？',
+        success:(res) => {
+          // 用户点击确定时候触发
+          if (res.confirm) {
+
+            // 删除data.goods的商品数据
+            // delete是js原生的属性，用来删除对象的属性
+            delete goods[id];
+
+            this.setData({
+              goods
+            });
+
+            this.getAllPrice();
+          } 
+        }
+      })
+    }else{
+      // 给商品的数量加1
+      goods[id].number -= 1;
+
+      this.setData({
+        goods
+      });
+
+      // 计算总价格
+      this.getAllPrice();
+    }
   }
 })
