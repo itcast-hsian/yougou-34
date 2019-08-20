@@ -10,14 +10,26 @@ Page({
       userName: "", // 收货人
       telNumber: "", // 手机号码
       detailInfo: "", // 详细的收货地址，在返回的数据中拼接省份，城市..
-    }
+    },
+
+    // goods是来自于本地的购物车数据列表
+    goods: {}
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    
+  },
 
+  onShow(){
+    // 获取本地的商品列表
+    const goods = wx.getStorageSync("goods") || {};
+
+    this.setData({
+      goods
+    })
   },
 
   // 获取收货地址
