@@ -46,6 +46,6 @@ indicator-dots>
   </navigator>
 
   <!-- 右侧的按钮 -->
-  <view class="footer-button">加入购物车</view>
+  <view class="footer-button" bindtap="handleAddCart">加入购物车</view>
   <view class="footer-button">立即购买</view>
 </view>
