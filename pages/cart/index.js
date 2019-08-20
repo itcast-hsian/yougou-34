@@ -16,7 +16,10 @@ Page({
     goods: {},
 
     // 总价格
-    allPrice: 0
+    allPrice: 0,
+
+    // 全部的选中状态
+    allSelected: true,
   },
 
   /**
@@ -29,6 +32,18 @@ Page({
   onShow(){
     // 获取本地的商品列表
     const goods = wx.getStorageSync("goods") || {};
+
+    // 判断全选的状态
+    Object.keys(goods).forEach(v => {
+      // 只要有一项的选中状态时false，全选的状态就是false
+      if(!this.data.allSelected) return;
+
+      if(!goods[v].selected){
+        this.setData({
+          allSelected: false
+        })
+      }
+    })
 
     this.setData({
       goods
@@ -154,5 +169,22 @@ Page({
       // 计算总价格
       this.getAllPrice();
     }
+  },
+
+  //全选
+  handleAllSelected(){
+    // 循环给所有的商品全部状态取反
+    const {goods} = this.data;
+
+    Object.keys(goods).forEach(v => {
+      goods[v].selected = !this.data.allSelected;
+    });
+
+    this.setData({
+      goods,
+      allSelected: !this.data.allSelected
+    });
+
+    this.getAllPrice();
   }
 })

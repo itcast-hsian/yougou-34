@@ -60,7 +60,7 @@
               class="goods-number-btn"
               bindtap="handleReduceNumber"
                data-id="{{item.goods_id}}">-</view>
-               
+
               <text>{{ item.number }}</text>
               <!-- 数量加一 -->
               <view 
@@ -77,8 +77,8 @@
 
   <!-- 底部条 -->
   <view class="footer">
-    <view class="footer-left">
-      <icon type="success" size="16" color="red"></icon>
+    <view class="footer-left" bindtap="handleAllSelected">
+      <icon type="success" size="16" color="{{ allSelected ? 'red': 'gray' }}"></icon>
       全选
     </view>
 
@@ -89,5 +89,4 @@
 
     <view class="checkout">结算</view>
   </view>
-
 </view>
