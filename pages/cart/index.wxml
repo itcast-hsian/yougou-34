@@ -68,7 +68,7 @@
     </view>
 
     <view class="footer-center">
-      <view>合计: <text class="colorRed">￥ 151562</text></view>
+      <view>合计: <text class="colorRed">￥ {{ allPrice }}</text></view>
       <text class="colorGray">包含运费</text>
     </view>
 

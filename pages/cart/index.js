@@ -13,7 +13,10 @@ Page({
     },
 
     // goods是来自于本地的购物车数据列表
-    goods: {}
+    goods: {},
+
+    // 总价格
+    allPrice: 0
   },
 
   /**
@@ -29,7 +32,9 @@ Page({
 
     this.setData({
       goods
-    })
+    });
+    // 计算总价格
+    this.getAllPrice();
   },
 
   // 获取收货地址
@@ -46,6 +51,20 @@ Page({
           }
         })
       }
+    })
+  },
+
+  // 计算总价格
+  getAllPrice(){
+
+    let price = 0;
+
+    Object.keys(this.data.goods).forEach(v => {
+      price += this.data.goods[v].goods_price;
+    });
+
+    this.setData({
+      allPrice: price
     })
   }
 })
