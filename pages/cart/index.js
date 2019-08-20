@@ -30,23 +30,31 @@ Page({
   },
 
   onShow(){
+    // 判断全选的状态
+    this.handleChangeAllSelected();
+  },
+
+  // 点击单个商品时候处理全选的状态
+  handleChangeAllSelected(){
     // 获取本地的商品列表
     const goods = wx.getStorageSync("goods") || {};
+
+    // 记录状态
+    let selected = true;
 
     // 判断全选的状态
     Object.keys(goods).forEach(v => {
       // 只要有一项的选中状态时false，全选的状态就是false
-      if(!this.data.allSelected) return;
+      if(!selected) return;
 
       if(!goods[v].selected){
-        this.setData({
-          allSelected: false
-        })
+        selected = false
       }
     })
 
     this.setData({
-      goods
+      goods,
+      allSelected: selected
     });
     // 计算总价格
     this.getAllPrice();
@@ -101,13 +109,16 @@ Page({
 
     // 把选中状态取反
     goods[id].selected = !goods[id].selected;
-
+    
     this.setData({
       goods
     })
 
     // 计算总价格
     this.getAllPrice();
+
+    // 如果当前的selected的值是false时候，要修改全选的状态
+    this.handleChangeAllSelected();
   },
 
   // 增加数量
@@ -173,13 +184,14 @@ Page({
 
   //全选
   handleAllSelected(){
-    // 循环给所有的商品全部状态取反
     const {goods} = this.data;
 
+    // 循环商品的状态全部状态取反
     Object.keys(goods).forEach(v => {
       goods[v].selected = !this.data.allSelected;
     });
 
+    // 同时修改data的goods和全部的状态
     this.setData({
       goods,
       allSelected: !this.data.allSelected
