@@ -65,13 +65,16 @@ Page({
 
       //满足选中状态时true的时候才添加价格
       if (item.selected){
-        price += item.goods_price;
+        price += item.goods_price * item.number;
       }
     });
 
     this.setData({
       allPrice: price
-    })
+    });
+
+    // 把当前的最新商品列表保存到本地
+    wx.setStorageSync("goods", this.data.goods);
   },
 
   // 选中状态
@@ -87,6 +90,22 @@ Page({
     this.setData({
       goods
     })
+
+    // 计算总价格
+    this.getAllPrice();
+  },
+
+  // 增加数量
+  handleAddNunber(event){
+    const {id} = event.currentTarget.dataset;
+    const { goods } = this.data;
+
+    // 给商品的数量加1
+    goods[id].number += 1;
+
+    this.setData({
+      goods
+    });
 
     // 计算总价格
     this.getAllPrice();

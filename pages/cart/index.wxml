@@ -57,7 +57,10 @@
             <view class="goods-numbers">
               <view class="goods-number-btn">-</view>
               <text>{{ item.number }}</text>
-              <view class="goods-number-btn">+</view>
+              <view 
+              class="goods-number-btn" 
+              bindtap="handleAddNunber"
+              data-id="{{item.goods_id}}">+</view>
             </view>
           </view>
         </view>
