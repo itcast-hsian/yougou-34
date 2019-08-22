@@ -5,12 +5,12 @@
     <!-- 如果有收货地址才显示 -->
     <view>
       <view class="address-info">
-        <text>收货人：zhangsan</text>
-        <text>123127381</text>
+        <text>收货人：{{ address.userName }}</text>
+        <text>{{ address.telNumber }}</text>
       </view>
 
       <view class="address-text">
-        收货地址：xxxxxxx
+        收货地址：{{ address.detailInfo }}
       </view>
     </view>
 

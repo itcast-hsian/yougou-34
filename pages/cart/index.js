@@ -88,6 +88,9 @@ Page({
             detailInfo: res.provinceName + res.cityName + res.countyName + res.detailInfo
           }
         })
+
+        //把收货地址添加到本地
+        wx.setStorageSync("address", this.data.address);
       }
     })
   },
