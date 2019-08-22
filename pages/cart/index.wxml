@@ -27,7 +27,7 @@
   </view>
 
   <!-- 商品列表 -->
-  <view style="padding-bottom:100rpx">
+  <view wx:if="{{ !isEmpty }}" style="padding-bottom:100rpx">
     <view class="goods-item" wx:for="{{ goods }}" wx:key="{{index}}">
       <!-- 选中的按钮, color颜色是动态的 -->
       <icon 
@@ -73,6 +73,11 @@
 
       </view>
     </view>
+  </view>
+
+  <!-- 没有商品时候的显示 -->
+  <view wx:else class="goods-empty">
+    购物车为空
   </view>
 
   <!-- 底部条 -->

@@ -13,13 +13,16 @@ Page({
     },
 
     // goods是来自于本地的购物车数据列表
-    goods: {},
+    goods: {}, // Boolean(goods)
 
     // 总价格
     allPrice: 0,
 
     // 全部的选中状态
     allSelected: true,
+
+    // 判断购物车是否为空
+    isEmpty: false
   },
 
   /**
@@ -32,6 +35,13 @@ Page({
   onShow(){
     // 判断全选的状态
     this.handleChangeAllSelected();
+
+    // 判断对象是否为空
+    if(Object.keys(this.data.goods).length === 0){
+      this.setData({
+        isEmpty: true
+      })
+    }
   },
 
   // 点击单个商品时候处理全选的状态
