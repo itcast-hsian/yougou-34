@@ -240,6 +240,21 @@ Page({
       return;
     }
 
+    // 把选中的商品添加到本地 selected_goods
+    const selectedGoods = [] 
+
+    Object.keys(goods).forEach(v => {
+      // 当前的商品
+      const item = goods[v];
+
+      if(item.selected){
+        selectedGoods.push(item)
+      }
+    })
+
+    wx.setStorageSync("selected_goods", selectedGoods)
+
+
     wx.navigateTo({
       url: '/pages/order_enter/index',
     })
