@@ -36,6 +36,11 @@ Page({
     // 判断全选的状态
     this.handleChangeAllSelected();
 
+    // 每次打开页面时候都要初始化empty的状态
+    this.setData({
+      isEmpty: false
+    })
+
     // 判断对象是否为空
     if(Object.keys(this.data.goods).length === 0){
       this.setData({
