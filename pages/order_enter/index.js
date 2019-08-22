@@ -46,9 +46,9 @@ Page({
     // 返回后台需要的商品的数据格式
     const newGoods = goods.map(v => {
       return {
-        goods_id: v.goods_id,
-        goods_number: v.number,
-        goods_price: v.goods_price
+        goods_id: v.goods_id, // 商品id
+        goods_number: v.number,  // 单个商品的数量
+        goods_price: v.goods_price // 商品的单价
       }
     })
 
@@ -61,7 +61,9 @@ Page({
         goods: newGoods // 筛选过来的商品数据
       }
     }).then(res => {
-      //console.log(res)
+      
+      
+      
     })
   }
   

@@ -1,1 +1,20 @@
-/* pages/auth/index.wxss */
+page ,.auth{
+  height:100%;
+}
+
+.auth{
+  display: flex;
+  padding-top:100rpx;
+  align-items: center;
+  flex-direction: column;
+}
+
+.auth image{
+  width:160rpx;
+  height:160rpx;
+  margin-bottom: 50rpx;
+}
+  
+.button{
+  width:700rpx;
+}
