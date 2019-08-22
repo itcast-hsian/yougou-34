@@ -2,6 +2,15 @@
 
   <image src="../../images/reg_logo@2x.png" mode="aspectFill"></image>
 
-  <button type="primary" class="button">授权</button>
+   <!-- open-type="getUserInfo" 获取用户信息的类型 -->
+   <!-- bindgetuserinfo: 获取用户信息的回调 -->
+  <button 
+  type="primary" 
+  class="button" 
+  open-type="getUserInfo"
+  bindgetuserinfo="handleGetUserInfo"
+  >
+  授权
+  </button>
 
 </view>

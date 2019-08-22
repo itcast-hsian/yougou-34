@@ -1,3 +1,5 @@
+import request from "../../utils/request.js";
+
 // pages/auth/index.js
 Page({
 
@@ -15,52 +17,36 @@ Page({
 
   },
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
+  // 获取用户详细信息
+  handleGetUserInfo(msg){
+    // 获取code
+    wx.login({
+      success(res) {
+        if (res.code) {
 
-  },
+          // 拼接参数
+          const data = {
+            code: res.code,
+            encryptedData: msg.detail.encryptedData,
+            rawData: msg.detail.rawData,
+            iv: msg.detail.iv,
+            signature: msg.detail.signature,
+          }
 
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
+          // 开始调用后台接口获取token
+          request({
+            url: "/users/wxlogin",
+            data,
+            method: "POST"
+          }).then(res => {
+            console.log(res)
+          })
 
-  },
 
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+        } else {
+          console.log('登录失败！' + res.errMsg)
+        }
+      }
+    })
   }
 })
