@@ -92,6 +92,6 @@
       <text class="colorGray">包含运费</text>
     </view>
 
-    <view class="checkout">结算</view>
+    <view class="checkout" bindtap="handleCheckout">结算</view>
   </view>
 </view>

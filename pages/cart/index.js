@@ -208,5 +208,33 @@ Page({
     });
 
     this.getAllPrice();
+  },
+
+  // 跳转到结算页
+  handleCheckout(){
+    const {address, goods} = this.data
+
+    // 收货地址是否为空
+    if (!address.userName){
+      wx.showToast({
+        title: '收货地址不能为空',
+        icon: "none"
+      });
+      return;
+    }
+
+    // 购物车商品列表是否为空
+    if (Object.keys(goods).length === 0 ) {
+      wx.showToast({
+        title: '购物车不能为空',
+        icon: "none"
+      });
+      return;
+    }
+
+    wx.navigateTo({
+      url: '/pages/order_enter/index',
+    })
+
   }
 })
