@@ -252,7 +252,8 @@ Page({
       }
     })
 
-    wx.setStorageSync("selected_goods", selectedGoods)
+    // 保存到本地
+    wx.setStorageSync("selected_goods", selectedGoods);
 
 
     wx.navigateTo({

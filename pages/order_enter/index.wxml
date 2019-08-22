@@ -25,10 +25,10 @@
 
   <!-- 商品列表 -->
   <view >
-    <view class="goods-item">
+    <view class="goods-item" wx:for="{{ goods }}" wx:key="{{key}}">
       <view class="goods-info">
         <image 
-        src="https://www.baidu.com/img/bd_logo1.png"
+        src="{{ item.goods_small_logo }}"
         mode="aspectFill"
         ></image>
 
@@ -36,15 +36,15 @@
         <view class="goods-right">
           <!-- 标题 -->
           <view class="goods-title">
-            商品的标题和价格
+            {{item.goods_name  }}
           </view>
           <!-- 价格和计算数量 -->
           <view class="goods-right-btm">
-            <view class="goods-price">￥7889</view>
+            <view class="goods-price">￥{{ item.goods_price }}</view>
             <!-- 计算数量 -->
             <view class="goods-numbers">
               
-              <text>x 4</text>
+              <text>x {{ item.number }}</text>
               
             </view>
           </view>
@@ -55,7 +55,7 @@
   </view>
 
   <view class="allprice">
-    总价：￥12000
+    总价：￥{{ allPrice }}
   </view>
 
   <button type="primary">支付</button>
