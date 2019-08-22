@@ -1,4 +1,5 @@
-// pages/order_enter/index.js
+import request from "../../utils/request.js"
+
 Page({
 
   /**
@@ -36,6 +37,32 @@ Page({
     })
   },
 
-  
+
+  // 创建订单 / 支付
+  handlePay(){
+
+    const {allPrice, address, goods} = this.data;
+
+    // 返回后台需要的商品的数据格式
+    const newGoods = goods.map(v => {
+      return {
+        goods_id: v.goods_id,
+        goods_number: v.number,
+        goods_price: v.goods_price
+      }
+    })
+
+    request({
+      url: "/my/orders/create",
+      method: "POST",
+      data: {
+        order_price: allPrice, //总价格
+        consignee_addr: `${address.userName} ${address.telNumber} ${address.detailInfo}`, // 收货地址
+        goods: newGoods // 筛选过来的商品数据
+      }
+    }).then(res => {
+      //console.log(res)
+    })
+  }
   
 })

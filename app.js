@@ -8,5 +8,15 @@ App({
     request.defaults.baseURL = "https://api.zbztb.cn/api/public/v1";
 
     // 错误拦截
+    request.onError(function(res){
+      //console.log(res)
+
+      if (res.data.meta.status === 401){
+        // 跳转到授权页
+        wx.navigateTo({
+          url: '/pages/auth/index',
+        })
+      }
+    })
   }
 })

@@ -58,6 +58,6 @@
     总价：￥{{ allPrice }}
   </view>
 
-  <button type="primary">支付</button>
+  <button type="primary" bindtap="handlePay">支付</button>
 
 </view>
