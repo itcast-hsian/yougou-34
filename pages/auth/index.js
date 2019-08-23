@@ -39,10 +39,15 @@ Page({
             data,
             method: "POST"
           }).then(res => {
-            console.log(res)
+
+            // 把token保存到本地
+            const {token} = res.data.message;
+            wx.setStorageSync("token", token);
+
+            // 返回上一页
+            wx.navigateBack();
+
           })
-
-
         } else {
           console.log('登录失败！' + res.errMsg)
         }

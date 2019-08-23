@@ -52,6 +52,7 @@ Page({
       }
     })
 
+    // 创建订单的接口
     request({
       url: "/my/orders/create",
       method: "POST",
@@ -59,10 +60,14 @@ Page({
         order_price: allPrice, //总价格
         consignee_addr: `${address.userName} ${address.telNumber} ${address.detailInfo}`, // 收货地址
         goods: newGoods // 筛选过来的商品数据
+      },
+      header: {
+        // 带上本地的token
+        Authorization: wx.getStorageSync("token") || ""
       }
     }).then(res => {
       
-      
+      console.log(res)
       
     })
   }
