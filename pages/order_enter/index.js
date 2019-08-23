@@ -66,9 +66,27 @@ Page({
         Authorization: wx.getStorageSync("token") || ""
       }
     }).then(res => {
-      
-      console.log(res)
-      
+
+      // 订单编号
+      const { order_number} = res.data.message;
+
+      // 获取支付的参数
+      request({
+        url: "/my/orders/req_unifiedorder",
+        method: "POST",
+        data: { 
+          order_number
+        },
+        header: {
+          // 带上本地的token
+          Authorization: wx.getStorageSync("token") || ""
+        }
+      }).then(res => {
+
+        // 获取支付的参数
+        wx.requestPayment( res.data.message.pay )
+
+      })
     })
   }
   
